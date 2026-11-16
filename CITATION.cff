@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+type: software
+title: "DNK MCP Creo"
+abstract: "A Model Context Protocol server for PTC Creo Parametric, built on an asynchronous Object TOOLKIT C++ bridge and a TypeScript MCP server."
+version: 0.1.0
+date-released: 2026-11-16
+license: Apache-2.0
+repository-code: "https://github.com/EdwardNguyen2854/dnk-mcp-creo"
+url: "https://github.com/EdwardNguyen2854/dnk-mcp-creo"
+authors:
+  - family-names: Nguyen
+    given-names: Edward
+    website: "https://github.com/EdwardNguyen2854"
+keywords:
+  - model-context-protocol
+  - mcp
+  - ptc-creo
+  - creo-parametric
+  - pro-toolkit
+  - object-toolkit
+  - cad
+  - automation
+  - typescript
+  - cpp

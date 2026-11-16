@@ -1,0 +1,97 @@
+name: Bug report
+description: Report a reproducible problem with the server, bridge, or tools
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Please include enough detail to reproduce the
+        problem. Remove machine paths, customer data, and secrets from logs
+        before pasting them.
+
+  - type: input
+    id: version
+    attributes:
+      label: Project version
+      description: Output of `git describe --tags` or the release you installed.
+      placeholder: v0.1.0
+    validations:
+      required: true
+
+  - type: input
+    id: creo
+    attributes:
+      label: Creo version
+      placeholder: Creo Parametric 9.0.2.0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: client
+    attributes:
+      label: MCP client
+      options:
+        - Claude Desktop
+        - Codex CLI
+        - opencode
+        - Cursor
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: packs
+    attributes:
+      label: Enabled packs
+      multiple: true
+      options:
+        - core
+        - read
+        - export
+        - modeling
+        - drawing
+        - features
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Start Creo ...
+        2. Run ...
+        3. Call tool ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: Include the tool error code and any stderr output.
+    validations:
+      required: true
+
+  - type: textarea
+    id: doctor
+    attributes:
+      label: Doctor output
+      description: Paste `node packages/server/dist/cli/doctor.js --json` (redact paths).
+      render: json
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I searched existing issues and the documentation.
+          required: true
+        - label: I removed secrets, customer data, and private paths from this report.
+          required: true

@@ -1,0 +1,23 @@
+{
+  "creo": {
+    "installDir": "<CREO_INSTALL_DIR>",
+    "connectMode": "attach",
+    "connectTimeoutSec": 20
+  },
+  "bridge": {
+    "requestTimeoutMs": 30000
+  },
+  "safety": {
+    "mode": "read-only"
+  },
+  "tools": {
+    "packs": ["core"]
+  },
+  "audit": {
+    "enabled": true,
+    "path": "logs/audit.jsonl"
+  },
+  "logging": {
+    "level": "info"
+  }
+}

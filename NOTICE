@@ -1,0 +1,31 @@
+DNK MCP Creo
+Copyright 2026 Edward Nguyen
+https://github.com/EdwardNguyen2854/dnk-mcp-creo
+
+This product includes software developed by third parties. The full list and
+the applicable license texts are in docs/ATTRIBUTION.md.
+
+Vendored components
+-------------------
+nlohmann/json
+Copyright (c) 2013-2023 Niels Lohmann <https://nlohmann.me>
+Licensed under the MIT License. The header is vendored at
+native/otk-bridge/third_party/nlohmann/json.hpp.
+
+Trademarks and SDKs
+-------------------
+PTC, Creo, Creo Parametric, Pro/ENGINEER, Pro/TOOLKIT, and Object TOOLKIT (OTK)
+are trademarks or registered trademarks of PTC Inc. or its subsidiaries.
+
+This project is an independent integration. It is not affiliated with,
+sponsored by, or endorsed by PTC Inc. PTC Creo, the Pro/TOOLKIT SDK, and the
+OTK SDK are not distributed with this repository. You must obtain and license
+them separately from PTC, and you are responsible for complying with the terms
+of your PTC license.
+
+Safety notice
+-------------
+This software can drive a live CAD session. The default safety mode is
+read-only, but the optional copy and live modes can modify models and files.
+Review docs/SAFETY.md before enabling write-capable packs, and work on copies
+or version-controlled data.

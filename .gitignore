@@ -1,0 +1,57 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+coverage/
+*.tsbuildinfo
+
+# Native build output
+native/otk-bridge/build/
+*.obj
+*.exe
+*.pdb
+*.ilk
+*.exp
+*.lib
+
+# Runtime output
+logs/
+*.log
+/std.out
+/slider_crank*.log.*
+
+# Local agent-team run state
+.agent-teams/
+
+# Creo trail files (created in Creo's working directory)
+trail.txt.*
+
+# Fixture sandbox (copied from the Creo installation, never committed)
+fixtures/sandbox/
+
+# Local configuration (may contain machine paths)
+dnk-mcp-creo.json
+dnk-mcp-creo.local.json
+creo-mcp.json
+creo-mcp.local.json
+
+# Environment and secrets (keep example files)
+.env
+.env.*
+!.env.example
+
+# Editor / OS
+.vs/
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.user
+*~
+
+# Temporary output
+tmp/
+temp/
+*.tmp

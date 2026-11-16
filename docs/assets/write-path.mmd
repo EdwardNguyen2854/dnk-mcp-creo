@@ -1,0 +1,17 @@
+---
+title: The write path — guards first, readback last
+---
+flowchart TB
+  W(["Write tool call"]) --> ADMIT["<b>Admit</b><br/>safety.mode · pack registered<br/>path contained in working dir"]
+  ADMIT -->|"reject"| REJECT["POLICY_BLOCKED<br/>TOOL_UNAVAILABLE<br/>INVALID_ARGUMENT"]
+  ADMIT --> GUARD["<b>Guard</b><br/>expectedOldValue · not relation-driven<br/>within 0.5x–2x range"]
+  GUARD -->|"reject"| REFUSE["STALE_VALUE<br/>POLICY_BLOCKED<br/>OUT_OF_RANGE"]
+  GUARD --> APPLY["<b>Apply</b><br/>edit the working copy"]
+  APPLY --> VERIFY["<b>Verify</b><br/>re-read volume direction<br/>feature count · envelope"]
+  VERIFY -->|"mismatch"| ROLL["<b>Rollback</b><br/>delete copy · restore backup"]
+  VERIFY -->|"ok"| AUDIT["<b>Audit + save</b><br/>append JSONL record<br/>then save the copy"]
+
+  classDef stop fill:#fdf1ee,stroke:#d8a48f,color:#7a2e17
+  classDef go fill:#eef5f0,stroke:#9dbfa8,color:#1d4a2f
+  class REJECT,REFUSE,ROLL stop
+  class AUDIT go
