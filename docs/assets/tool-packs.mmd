@@ -1,0 +1,19 @@
+---
+title: Tool packs — opt in, keep the model's context small
+---
+flowchart TB
+  CFG["tools.packs<br/>CREO_MCP_PACKS"]
+
+  CFG --> CORE["core · 7<br/>session<br/>models"]
+  CFG --> READ["read · 14<br/>parameters<br/>features"]
+  CFG --> EXPORT["export · 5<br/>STEP · STL<br/>PDF · DXF"]
+  CFG --> MODEL["modeling · 14<br/>lifecycle<br/>dimensions"]
+  CFG --> DRAW["drawing · 14<br/>sheets<br/>views"]
+  CFG --> FEAT["features · 11<br/>extrude<br/>holes"]
+
+  CFG -.-> LATER["planned<br/>write · assembly<br/>sheetmetal · knowledge"]
+
+  classDef later fill:#ffffff,stroke:#cbd6dd,stroke-dasharray:4 4,color:#5b6b78
+  classDef cfg fill:#f8f5f0,stroke:#cbb69c,color:#16232e
+  class LATER later
+  class CFG cfg

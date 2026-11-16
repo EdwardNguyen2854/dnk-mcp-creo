@@ -1,0 +1,15 @@
+---
+title: mcp-creo — process architecture
+---
+flowchart LR
+  CL["<b>MCP clients</b><br/>Claude · Codex<br/>opencode · Cursor"]
+  SV["<b>@creo-mcp/server</b><br/>TypeScript<br/>tools + zod schemas<br/>policy engine · audit log"]
+  BR["<b>creo-otk-bridge.exe</b><br/>C++17<br/>async OTK primitives<br/>readback on every call"]
+  CREO["<b>Creo Parametric</b><br/>9.0.2.0"]
+
+  CL -->|"MCP over stdio<br/>JSON-RPC 2.0"| SV
+  SV -->|"framed stdio<br/>CREOBRIDGE frames"| BR
+  BR -->|"PTC async RPC"| CREO
+
+  classDef creo fill:#f8f5f0,stroke:#cbb69c,color:#16232e
+  class CREO creo

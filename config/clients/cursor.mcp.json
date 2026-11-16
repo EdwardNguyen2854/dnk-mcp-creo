@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "dnk-creo": {
+      "command": "node",
+      "args": ["<REPO_ROOT>/packages/server/dist/index.js"],
+      "env": {
+        "CREO_INSTALL_DIR": "<CREO_INSTALL_DIR>"
+      }
+    }
+  }
+}

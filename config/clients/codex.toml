@@ -1,0 +1,8 @@
+# Codex CLI: ~/.codex/config.toml
+# Replace <REPO_ROOT> and <CREO_INSTALL_DIR> with absolute paths (forward slashes
+# or escaped backslashes are both accepted on Windows).
+
+[mcp_servers.dnk-creo]
+command = "node"
+args = ["<REPO_ROOT>/packages/server/dist/index.js"]
+env = { CREO_INSTALL_DIR = "<CREO_INSTALL_DIR>" }

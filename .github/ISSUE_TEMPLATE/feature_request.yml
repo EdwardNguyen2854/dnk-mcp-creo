@@ -1,0 +1,58 @@
+name: Feature request
+description: Suggest a tool, workflow, or improvement
+title: "[feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Check `docs/ROADMAP.md` and `docs/TOOLS.md` first. Planned items may
+        already be tracked.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or use case
+      description: What are you trying to do? Describe the CAD workflow.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Core / session
+        - Read pack
+        - Export pack
+        - Modeling pack
+        - Drawing pack
+        - Features pack
+        - Native bridge
+        - Safety / policy
+        - Documentation
+        - Tooling / CI
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I checked the roadmap and tool catalog.
+          required: true
+        - label: This request does not require arbitrary code execution.
+          required: true

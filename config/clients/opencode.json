@@ -1,0 +1,13 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "dnk-creo": {
+      "type": "local",
+      "command": ["node", "<REPO_ROOT>/packages/server/dist/index.js"],
+      "enabled": true,
+      "environment": {
+        "CREO_INSTALL_DIR": "<CREO_INSTALL_DIR>"
+      }
+    }
+  }
+}

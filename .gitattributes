@@ -1,0 +1,25 @@
+# Normalize text files to LF so the repository is consistent across platforms.
+* text=auto eol=lf
+
+# PowerShell and Windows shell scripts keep CRLF.
+*.ps1 text eol=crlf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Binary assets.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.mp4 binary
+*.webm binary
+*.pdf binary
+*.exe binary
+*.dll binary
+*.lib binary
+*.pdb binary
+
+# Generated files.
+package-lock.json linguist-generated=true
